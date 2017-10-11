@@ -5,4 +5,4 @@ The following applications is created with React Native and shows the use of red
 
 Below is a link that shows the apps functionality
 
-https://www.youtube.com/watch?v=8oFgZ0ifuxM&feature=youtu.be
+https://youtu.be/DdUNRm3WGX4
