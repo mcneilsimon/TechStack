@@ -1,0 +1,9 @@
+{
+    "extends": "rallycoding",
+    "rules": {
+      "react/require-extension": "off",
+      "max-len": "off",
+      "arrow-body-style": "off",
+      "camelcase" : "off"
+  }
+}

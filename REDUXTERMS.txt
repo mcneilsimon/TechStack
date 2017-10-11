@@ -1,0 +1,57 @@
+Understanding some REDUX terms. There are four words that are important to understand. Store, Action, Reducer, State
+
+Reducer: A function that produces some amount of data. 
+
+Action: A plan JS object (curly braces) that tells the reducer how to modify its data. 
+It only has one requirement which is a type property. Actions give us the ability to make predicatble changes to the state
+of our application.
+
+State: Our Application data, meaning everything from the value of each input field, to a list of data, to if a user is authenticated
+puts together our state. 
+
+Store: The store is what holds that reducer and application states. It has a reference to the reducer and the state. 
+When we say redux has some data for us, or have to update some data that redux has for us we our refering to the store. 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+First you start of with the Action. Such as assign a variable of letters and then want to split each letter and be seperated
+to form an array. We than take that acction and pass it to the reducer. When we pass it to the reducer, the reducer checks 
+what needs to be done. It takes the actions string of characters and then split it into a list of characters. The reducer
+will then return the array of characters, to the application state. We than now say that the state consists of a set of characters. 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+HERE IS A GOOD BASIC REDUX EXAMPLE
+
+const reducer = (state = [], action) => {
+	if (action.type === 'split_string'){
+    return action.payload.split('');
+  } 
+  else if (action.type === 'add_character') {
+  	return [ ...state, action.payload ]; //always return brand new objects from reducers
+  } 
+  return state;
+};
+
+const store = Redux.createStore(reducer);
+
+store.getState();
+
+const action = {
+  type: 'split_string',
+  payload: 'asdf'
+};
+
+store.dispatch(action);
+
+store.getState();
+
+const action2 = {
+  type: 'add_character',
+  payload: 'a'
+};
+
+store.dispatch(action2);
+
+store.getState();
+
